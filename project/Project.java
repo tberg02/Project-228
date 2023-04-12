@@ -9,9 +9,16 @@ package com.mycompany.project;
  *
  * @author tonya
  */
-public class Project {
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.net.HttpURLConnection;
+import java.net.URL;
 
-    public static void main(String[] args) {
-        System.out.println("Hello World!");
+public class Project {
+    public static void main(String[] args) throws IOException {
+        ProjectClass api = new ProjectClass();
+        String response = api.fetchAverageSellingPrice();
+        System.out.println(response);
     }
 }
